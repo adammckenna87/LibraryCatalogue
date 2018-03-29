@@ -9,7 +9,7 @@ namespace LibraryCatalogue
         {
             createFile();
 
-
+            throw new Exception("Broken!");
 
 
         }
