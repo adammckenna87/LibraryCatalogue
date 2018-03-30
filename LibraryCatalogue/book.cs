@@ -4,7 +4,7 @@ using System.Text;
 
 namespace LibraryCatalogue
 {
-    class book
+    class Book
     {
         public string Title { get; set; }
         public string Author { get; set; }
