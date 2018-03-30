@@ -4,11 +4,19 @@ using System.Text;
 
 namespace LibraryCatalogue
 {
-    class CardCatalogue
+    public class CardCatalogue
     {
     
+
         private string fileName;
 
+
+
+
+        public void ListBooks()
+        {
+
+        }
       
     }
 }
