@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace LibraryCatalogue
 {
@@ -11,8 +12,10 @@ namespace LibraryCatalogue
             int choice =
                 PromptUserForNumber(
                     string.Format("Would you like to 1.LIst all Books, 2.Add a book, or 3.Save and Exit ?"));
-            //need to write methods in CardCatalog
+
+                   
             CardCatalogue myCardCatalogue = new CardCatalogue();
+            
             if (choice == 1)
             {
                
@@ -25,10 +28,16 @@ namespace LibraryCatalogue
             }
             else if (choice == 3)
             {
-                myCardCatalogue.Save();
+               // myCardCatalogue.Save();
             }
 
+            Console.ReadLine();
         }
+
+        
+
+        
+
         public static string createFile()
         {
             Console.WriteLine("Enter a file name");
