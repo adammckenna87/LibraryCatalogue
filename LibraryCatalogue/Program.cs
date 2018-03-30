@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Xml.Serialization;
 
 namespace LibraryCatalogue
 {
@@ -9,34 +10,33 @@ namespace LibraryCatalogue
         static void Main(string[] args)
         {
             createFile();
-            int choice =
-                PromptUserForNumber(
+            int choice;
+            do
+            {
+                choice = PromptUserForNumber(
                     string.Format("Would you like to 1.LIst all Books, 2.Add a book, or 3.Save and Exit ?"));
-
-                   
-            CardCatalogue myCardCatalogue = new CardCatalogue();
-            
-            if (choice == 1)
-            {
                
-                myCardCatalogue.ListBooks();
-            }
-            else if (choice == 2)
-            {
+                CardCatalogue myCardCatalogue = new CardCatalogue();
 
-                myCardCatalogue.AddBook();
-            }
-            else if (choice == 3)
-            {
-               // myCardCatalogue.Save();
-            }
+                if (choice == 1)
+                {
 
-            Console.ReadLine();
+                    myCardCatalogue.ListBooks();
+                }
+                else if (choice == 2)
+                {
+
+                    myCardCatalogue.AddBook();
+                }
+                else if (choice == 3)
+                {
+                    // myCardCatalogue.Save();
+                }
+
+                Console.ReadLine();
+            } while (choice != 3);
         }
-
-        
-
-        
+               
 
         public static string createFile()
         {
