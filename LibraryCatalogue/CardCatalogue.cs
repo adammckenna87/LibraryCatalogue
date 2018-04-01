@@ -1,14 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.Xml.Serialization;
 
 namespace LibraryCatalogue
 {
     public class CardCatalogue
     {
-    
 
-        private string fileName;
+
+        private string _fileName;
+
+        public CardCatalogue(string fileName)
+        {
+            _fileName = fileName;
+        }
 
         List<Book> books = new List<Book>();
 
@@ -17,7 +25,7 @@ namespace LibraryCatalogue
             Console.WriteLine("Please enter a title");
             string Title = Console.ReadLine();
             Book myBook = new Book();
-            myBook.Title = Title; 
+            myBook.Title = Title;
             books.Add(myBook);
 
             Console.WriteLine("Please enter an author");
@@ -50,6 +58,10 @@ namespace LibraryCatalogue
                 Console.WriteLine(b);
             }
         }
-      
+
+        public void Save()
+        {
+
+        }
     }
 }

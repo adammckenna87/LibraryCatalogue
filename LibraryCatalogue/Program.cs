@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using System.Xml.Serialization;
 
+
+
+
 namespace LibraryCatalogue
 {
     class Program
@@ -9,9 +12,13 @@ namespace LibraryCatalogue
         
         static void Main(string[] args)
         {
-            createFile();
+            
             int choice;
-            CardCatalogue myCardCatalogue = new CardCatalogue();
+
+            Console.WriteLine("Enter a file name");
+            string fileName = Console.ReadLine();
+
+            CardCatalogue myCardCatalogue = new CardCatalogue(fileName);
             do
             {
                 choice = PromptUserForNumber(
@@ -32,18 +39,12 @@ namespace LibraryCatalogue
                     // myCardCatalogue.Save();
                 }
 
-              //  Console.ReadLine();
+              
             } while (choice != 3);
         }
                
 
-        public static string createFile()
-        {
-            Console.WriteLine("Enter a file name");
-            string fileName = Console.ReadLine();
-            System.IO.File.Create(fileName);
-            return fileName;
-        }
+   
         private static int PromptUserForNumber(string promptString = "Enter a number")
         {
             int num;
