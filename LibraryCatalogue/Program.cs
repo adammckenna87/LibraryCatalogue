@@ -11,13 +11,12 @@ namespace LibraryCatalogue
         {
             createFile();
             int choice;
+            CardCatalogue myCardCatalogue = new CardCatalogue();
             do
             {
                 choice = PromptUserForNumber(
                     string.Format("Would you like to 1.LIst all Books, 2.Add a book, or 3.Save and Exit ?"));
-               
-                CardCatalogue myCardCatalogue = new CardCatalogue();
-
+                              
                 if (choice == 1)
                 {
 
@@ -33,7 +32,7 @@ namespace LibraryCatalogue
                     // myCardCatalogue.Save();
                 }
 
-                Console.ReadLine();
+              //  Console.ReadLine();
             } while (choice != 3);
         }
                
@@ -57,9 +56,6 @@ namespace LibraryCatalogue
 
             return num;
         }
-
-
-
 
     }
 }

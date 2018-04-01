@@ -10,21 +10,42 @@ namespace LibraryCatalogue
 
         private string fileName;
 
-        List<string> books = new List<string>();
+        List<Book> books = new List<Book>();
 
         public void AddBook()
         {
             Console.WriteLine("Please enter a title");
-            string title = Console.ReadLine();
-            books.Add(title);
+            string Title = Console.ReadLine();
+            Book myBook = new Book();
+            myBook.Title = Title; 
+            books.Add(myBook);
+
+            Console.WriteLine("Please enter an author");
+            string Author = Console.ReadLine();            
+            myBook.Author = Author;
+            books.Add(myBook);
+
+            Console.WriteLine("Please enter a year");
+            int Year = Convert.ToInt32(Console.ReadLine());
+            myBook.Year = Year;
+            books.Add(myBook);
+
+            Console.WriteLine("Please enter a genre");
+            string Genre = Console.ReadLine();
+            myBook.Genre = Genre;
+            books.Add(myBook);
+
+            Console.WriteLine("Please enter a language");
+            string Language = Console.ReadLine();
+            myBook.Language = Language;
+            books.Add(myBook);
+
         }
         
-
-
         public void ListBooks()
         {
             Console.WriteLine("List of books:");
-            foreach (string b in books )
+            foreach (Book b in books )
             {
                 Console.WriteLine(b);
             }
