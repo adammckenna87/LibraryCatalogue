@@ -9,8 +9,6 @@ namespace LibraryCatalogue
 {
     public class CardCatalogue
     {
-
-
         private string _fileName;
 
         public CardCatalogue(string fileName)
@@ -26,28 +24,23 @@ namespace LibraryCatalogue
             string Title = Console.ReadLine();
             Book myBook = new Book();
             myBook.Title = Title;
-            books.Add(myBook);
-
+            
             Console.WriteLine("Please enter an author");
             string Author = Console.ReadLine();            
             myBook.Author = Author;
-            books.Add(myBook);
-
+            
             Console.WriteLine("Please enter a year");
             int Year = Convert.ToInt32(Console.ReadLine());
             myBook.Year = Year;
-            books.Add(myBook);
-
+            
             Console.WriteLine("Please enter a genre");
             string Genre = Console.ReadLine();
             myBook.Genre = Genre;
-            books.Add(myBook);
-
+           
             Console.WriteLine("Please enter a language");
             string Language = Console.ReadLine();
             myBook.Language = Language;
             books.Add(myBook);
-
         }
         
         public void ListBooks()
@@ -55,7 +48,7 @@ namespace LibraryCatalogue
             Console.WriteLine("List of books:");
             foreach (Book b in books )
             {
-                Console.WriteLine(b);
+                Console.WriteLine("{0} {1} {2} {3} {4}",b.Title, b.Author, b.Year, b.Genre, b.Language);
             }
         }
 
@@ -66,5 +59,7 @@ namespace LibraryCatalogue
             bf.Serialize(stream, books);
             stream.Close();
         }
+
+
     }
 }

@@ -37,14 +37,10 @@ namespace LibraryCatalogue
                 else if (choice == 3)
                 {
                      myCardCatalogue.Save();
-                }
-
-              
+                }              
             } while (choice != 3);
         }
-               
-
-   
+                  
         private static int PromptUserForNumber(string promptString = "Enter a number")
         {
             int num;
@@ -54,7 +50,6 @@ namespace LibraryCatalogue
                 Console.WriteLine(promptString);
                 input = Console.ReadLine();
             }
-
             return num;
         }
 

@@ -22,15 +22,13 @@ namespace LibraryCatalogue
         {
 
         }
-
         
-
         public void GetObjectData(SerializationInfo info, StreamingContext context)
         {
             info.AddValue("Title", Title);
             info.AddValue("Author", Author);
             info.AddValue("Year", Year);
-            info.AddValue("Ganre", Genre);
+            info.AddValue("Genre", Genre);
             info.AddValue("Language", Language);
         }
 
