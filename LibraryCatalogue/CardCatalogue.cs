@@ -61,7 +61,10 @@ namespace LibraryCatalogue
 
         public void Save()
         {
-
+            Stream stream = File.Open(_fileName, FileMode.Create);
+            BinaryFormatter bf = new BinaryFormatter();
+            bf.Serialize(stream, books);
+            stream.Close();
         }
     }
 }
