@@ -55,9 +55,27 @@ namespace LibraryCatalogue
         public void Save()
         {
             Stream stream = File.Open(_fileName, FileMode.Create);
+
+            //Binary:
             BinaryFormatter bf = new BinaryFormatter();
             bf.Serialize(stream, books);
-            stream.Close();
+           stream.Close();
+
+            //XML:
+            /*
+            XmlSerializer serializer  = new XmlSerializer(typeof(Book));
+            using (TextWriter tw = new StreamWriter(@"C:\Users\akolodkin\source\book.xml"))
+            {
+                serializer.Serialize(tw, books);
+
+                XmlSerializer deSerializer = new XmlSerializer(typeof(Book));
+                TextReader reader = new StreamReader(@"C:\Users\akolodkin\source\book.xml");
+                object obj = deSerializer.Deserialize(reader);
+                books = (Book) obj;
+                reader.Close(); 
+                */
+
+            }
         }
 
 
